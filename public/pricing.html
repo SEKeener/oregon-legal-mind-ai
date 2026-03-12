@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oregon Legal Mind.ai Pricing - Choose the perfect legal AI plan for your practice. From solo practitioners to enterprise firms.">
+    <title>Pricing - Oregon Legal Mind.ai</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: #22d3ee;
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #22d3ee;
+        }
+        
+        .contact-header {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid #22d3ee;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #22d3ee;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-method:hover {
+            background: rgba(34, 211, 238, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.4);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Pricing Grid */
+        .pricing-section {
+            padding: 80px 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .pricing-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #475569;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #22d3ee;
+            box-shadow: 0 20px 40px rgba(34, 211, 238, 0.1);
+        }
+        
+        .pricing-card.featured {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.05);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #22d3ee 0%, #10b981 100%);
+            color: #0f172a;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .pricing-card h3 {
+            font-size: 28px;
+            color: #f8fafc;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .pricing-card .price {
+            font-size: 42px;
+            font-weight: 700;
+            color: #22d3ee;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-card .period {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-card .description {
+            color: #cbd5e1;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0 40px;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li i {
+            color: #10b981;
+            margin-right: 12px;
+            font-size: 16px;
+            width: 20px;
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22d3ee 0%, #10b981 100%);
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(34, 211, 238, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: #22d3ee;
+            border: 2px solid #22d3ee;
+        }
+        
+        .cta-button.secondary:hover {
+            background: rgba(34, 211, 238, 0.1);
+        }
+        
+        /* ROI Calculator */
+        .roi-calculator {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #475569;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 60px 0;
+        }
+        
+        .roi-calculator h3 {
+            font-size: 32px;
+            color: #f8fafc;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .roi-calculator p {
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .roi-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .roi-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .roi-form label {
+            display: block;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .roi-form input,
+        .roi-form select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #f8fafc;
+            font-size: 16px;
+        }
+        
+        .roi-results {
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid #22d3ee;
+            border-radius: 8px;
+            padding: 30px;
+            display: none;
+        }
+        
+        .roi-results h4 {
+            color: #22d3ee;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .roi-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .roi-stat {
+            text-align: center;
+        }
+        
+        .roi-stat .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f8fafc;
+            display: block;
+        }
+        
+        .roi-stat .label {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 80px 0;
+        }
+        
+        .faq h2 {
+            font-size: 42px;
+            color: #f8fafc;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .faq-item {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 30px;
+        }
+        
+        .faq-item h4 {
+            color: #f8fafc;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        
+        /* Enterprise CTA */
+        .enterprise-cta {
+            background: linear-gradient(135deg, #22d3ee 0%, #10b981 100%);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .enterprise-cta h3 {
+            color: #0f172a;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .enterprise-cta p {
+            color: #0f172a;
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .enterprise-cta .btn {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .enterprise-cta .btn:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid #334155;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .contact-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .roi-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <i class="fas fa-brain"></i>
+                Oregon Legal Mind.ai
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/demo">Demo</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            
+            <div class="contact-header">
+                <a href="tel:+15419149150" class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <span>Text Sean: 541-914-9150</span>
+                </a>
+                <a href="tel:LEGALBOT_NUMBER" class="contact-method">
+                    <i class="fas fa-robot"></i>
+                    <span>Call LegalBot: (Coming Soon)</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Choose Your Legal AI Plan</h1>
+            <p>From solo practitioners to enterprise firms - find the perfect Oregon Legal Mind.ai solution for your practice</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- OpenClaw Starter -->
+                <div class="pricing-card">
+                    <h3>OpenClaw Starter</h3>
+                    <div class="price">$1,000</div>
+                    <div class="period">per month</div>
+                    <div class="description">Perfect for solo practitioners looking to integrate AI into their practice</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>AI Legal Research</li>
+                        <li><i class="fas fa-check"></i>Document Analysis</li>
+                        <li><i class="fas fa-check"></i>OpenClaw Agent Integration</li>
+                        <li><i class="fas fa-check"></i>Basic Support (Email)</li>
+                        <li><i class="fas fa-check"></i>Cloud Hosting</li>
+                        <li><i class="fas fa-check"></i>50GB Document Storage</li>
+                        <li><i class="fas fa-check"></i>Standard Security</li>
+                    </ul>
+                    <a href="/contact" class="cta-button">Get Started</a>
+                </div>
+                
+                <!-- Small Firm - Featured -->
+                <div class="pricing-card featured">
+                    <h3>Small Firm</h3>
+                    <div class="price">$8,000</div>
+                    <div class="period">per month</div>
+                    <div class="description">Comprehensive legal AI suite for growing law firms with collaboration needs</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Everything in Starter</li>
+                        <li><i class="fas fa-check"></i>Multi-Attorney Collaboration</li>
+                        <li><i class="fas fa-check"></i>Advanced Document Review</li>
+                        <li><i class="fas fa-check"></i>LegalBot Voice Assistant</li>
+                        <li><i class="fas fa-check"></i>Priority Support (Phone & Email)</li>
+                        <li><i class="fas fa-check"></i>Practice Management Integration</li>
+                        <li><i class="fas fa-check"></i>500GB Document Storage</li>
+                        <li><i class="fas fa-check"></i>Advanced Analytics</li>
+                        <li><i class="fas fa-check"></i>Custom Workflows</li>
+                    </ul>
+                    <a href="/contact" class="cta-button">Start Free Trial</a>
+                </div>
+                
+                <!-- Mid-Firm -->
+                <div class="pricing-card">
+                    <h3>Mid-Firm</h3>
+                    <div class="price">$20,000</div>
+                    <div class="period">per month</div>
+                    <div class="description">Enterprise-grade features with advanced compliance and analytics capabilities</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Everything in Small Firm</li>
+                        <li><i class="fas fa-check"></i>Advanced Analytics Dashboard</li>
+                        <li><i class="fas fa-check"></i>Compliance Monitoring</li>
+                        <li><i class="fas fa-check"></i>Custom Integrations</li>
+                        <li><i class="fas fa-check"></i>Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i>Training & Onboarding</li>
+                        <li><i class="fas fa-check"></i>2TB Document Storage</li>
+                        <li><i class="fas fa-check"></i>Advanced Security Controls</li>
+                        <li><i class="fas fa-check"></i>SLA Guarantees</li>
+                    </ul>
+                    <a href="/contact" class="cta-button">Schedule Demo</a>
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <div class="period">pricing</div>
+                    <div class="description">Complete on-premises solution with full data privacy and custom features</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Everything in Mid-Firm</li>
+                        <li><i class="fas fa-check"></i>On-Premises Deployment</li>
+                        <li><i class="fas fa-check"></i>Complete Data Privacy</li>
+                        <li><i class="fas fa-check"></i>White-Label Options</li>
+                        <li><i class="fas fa-check"></i>Advanced Security (SOC2, HIPAA)</li>
+                        <li><i class="fas fa-check"></i>24/7 White-Glove Support</li>
+                        <li><i class="fas fa-check"></i>Custom Development</li>
+                        <li><i class="fas fa-check"></i>Unlimited Storage</li>
+                        <li><i class="fas fa-check"></i>Dedicated Infrastructure</li>
+                    </ul>
+                    <a href="/contact" class="cta-button secondary">Contact Sales</a>
+                </div>
+            </div>
+            
+            <!-- ROI Calculator -->
+            <div class="roi-calculator">
+                <h3>Calculate Your ROI</h3>
+                <p>See how much time and money Oregon Legal Mind.ai can save your practice</p>
+                
+                <div class="roi-form">
+                    <div class="form-group">
+                        <label for="firmSize">Number of Attorneys</label>
+                        <input type="number" id="firmSize" value="1" min="1" max="500">
+                    </div>
+                    <div class="form-group">
+                        <label for="hourlyRate">Average Hourly Rate ($)</label>
+                        <input type="number" id="hourlyRate" value="350" min="100" max="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="researchHours">Research Hours/Week</label>
+                        <input type="number" id="researchHours" value="10" min="1" max="80">
+                    </div>
+                    <div class="form-group">
+                        <label for="documentHours">Document Review Hours/Week</label>
+                        <input type="number" id="documentHours" value="8" min="1" max="80">
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <button onclick="calculateROI()" class="cta-button" style="display: inline-block; width: auto; padding: 16px 32px;">
+                        <i class="fas fa-calculator"></i> Calculate Savings
+                    </button>
+                </div>
+                
+                <div id="roiResults" class="roi-results">
+                    <h4>Your Potential Savings</h4>
+                    <div class="roi-stats">
+                        <div class="roi-stat">
+                            <span id="timeSavings" class="value">0 hours</span>
+                            <span class="label">Weekly Time Saved</span>
+                        </div>
+                        <div class="roi-stat">
+                            <span id="monthlySavings" class="value">$0</span>
+                            <span class="label">Monthly Cost Savings</span>
+                        </div>
+                        <div class="roi-stat">
+                            <span id="annualSavings" class="value">$0</span>
+                            <span class="label">Annual Net Savings</span>
+                        </div>
+                        <div class="roi-stat">
+                            <span id="roiPercent" class="value">0%</span>
+                            <span class="label">Return on Investment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enterprise CTA -->
+            <div class="enterprise-cta">
+                <h3>Need a Custom Solution?</h3>
+                <p>Large firms and specialized practices can benefit from our Enterprise tier with complete customization and on-premises deployment.</p>
+                <a href="tel:+15419149150" class="btn">
+                    <i class="fas fa-phone"></i> Call Sean: 541-914-9150
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What makes Oregon Legal Mind.ai different?</h4>
+                    <p>We're the first legal AI platform with a voice assistant (LegalBot) that prospects can call to experience our technology. Plus, our local deployment options ensure complete attorney-client privilege protection.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>How does LegalBot work?</h4>
+                    <p>LegalBot is our AI voice assistant that handles phone calls 24/7. Prospects can call to learn about our platform while actually experiencing our AI capabilities during the conversation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Is my data secure?</h4>
+                    <p>Absolutely. We offer cloud hosting with enterprise-grade security, plus on-premises deployment options for complete data control. All data is encrypted in transit and at rest.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Can I integrate with my existing tools?</h4>
+                    <p>Yes! We integrate with popular legal practice management software, document management systems, and billing platforms. Custom integrations are available for Enterprise clients.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What kind of support do you provide?</h4>
+                    <p>Support levels vary by plan: email support for Starter, priority phone/email for Small Firm, dedicated account manager for Mid-Firm, and 24/7 white-glove support for Enterprise.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Do you offer training?</h4>
+                    <p>Yes! All plans include basic onboarding. Mid-Firm and Enterprise tiers include comprehensive training programs and ongoing education for your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-brain"></i> Oregon Legal Mind.ai
+                </div>
+                <div class="footer-contacts">
+                    <a href="tel:+15419149150" class="footer-contact">
+                        <i class="fas fa-phone"></i>
+                        <span>Text Sean: 541-914-9150</span>
+                    </a>
+                    <a href="tel:LEGALBOT_NUMBER" class="footer-contact">
+                        <i class="fas fa-robot"></i>
+                        <span>Call LegalBot: (Coming Soon)</span>
+                    </a>
+                    <a href="mailto:contact@oregonlegalmind.ai" class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@oregonlegalmind.ai</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oregon Legal Mind.ai. All rights reserved. | Revolutionizing Legal Practice with AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function calculateROI() {
+            const firmSize = parseInt(document.getElementById('firmSize').value) || 1;
+            const hourlyRate = parseInt(document.getElementById('hourlyRate').value) || 350;
+            const researchHours = parseInt(document.getElementById('researchHours').value) || 10;
+            const documentHours = parseInt(document.getElementById('documentHours').value) || 8;
+            
+            // Calculate time savings (80% for research, 60% for documents)
+            const researchSaved = researchHours * 0.8;
+            const documentSaved = documentHours * 0.6;
+            const totalWeeklySaved = researchSaved + documentSaved;
+            
+            // Calculate cost savings
+            const weeklyCostSavings = totalWeeklySaved * hourlyRate;
+            const monthlyCostSavings = weeklyCostSavings * 4.33;
+            const annualCostSavings = monthlyCostSavings * 12;
+            
+            // Determine platform cost based on firm size
+            let monthlyCost = 1000; // OpenClaw Starter
+            if (firmSize >= 2 && firmSize <= 10) {
+                monthlyCost = 8000; // Small Firm
+            } else if (firmSize >= 11 && firmSize <= 50) {
+                monthlyCost = 20000; // Mid-Firm
+            } else if (firmSize > 50) {
+                monthlyCost = 50000; // Enterprise
+            }
+            
+            const annualCost = monthlyCost * 12;
+            const netAnnualSavings = annualCostSavings - annualCost;
+            const roiPercent = ((netAnnualSavings / annualCost) * 100).toFixed(0);
+            
+            // Update results
+            document.getElementById('timeSavings').textContent = totalWeeklySaved.toFixed(1) + ' hours';
+            document.getElementById('monthlySavings').textContent = '$' + Math.round(monthlyCostSavings).toLocaleString();
+            document.getElementById('annualSavings').textContent = '$' + Math.round(netAnnualSavings).toLocaleString();
+            document.getElementById('roiPercent').textContent = roiPercent + '%';
+            
+            // Show results
+            document.getElementById('roiResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

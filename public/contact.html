@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Oregon Legal Mind.ai - Call LegalBot AI, text Sean, or schedule a demo of our revolutionary legal AI platform.">
+    <title>Contact Us - Oregon Legal Mind.ai</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: #22d3ee;
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #22d3ee;
+        }
+        
+        .contact-header {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid #22d3ee;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #22d3ee;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-method:hover {
+            background: rgba(34, 211, 238, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.4);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-option {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .contact-option:hover {
+            border-color: #22d3ee;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(34, 211, 238, 0.1);
+        }
+        
+        .contact-option.featured {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.05);
+        }
+        
+        .contact-option .icon {
+            font-size: 48px;
+            color: #22d3ee;
+            margin-bottom: 20px;
+        }
+        
+        .contact-option h3 {
+            font-size: 24px;
+            color: #f8fafc;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .contact-option p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .contact-option .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #22d3ee 0%, #10b981 100%);
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .contact-option .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(34, 211, 238, 0.3);
+        }
+        
+        .contact-option .cta.secondary {
+            background: transparent;
+            color: #22d3ee;
+            border: 2px solid #22d3ee;
+        }
+        
+        .contact-option .cta.secondary:hover {
+            background: rgba(34, 211, 238, 0.1);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 40px;
+        }
+        
+        .contact-form h3 {
+            color: #f8fafc;
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .contact-form .subtitle {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #cbd5e1;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #f8fafc;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #22d3ee;
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .contact-preferences {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .preference-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid #475569;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .preference-option:hover {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+        }
+        
+        .preference-option input[type="radio"] {
+            width: auto;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22d3ee 0%, #10b981 100%);
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Office Info */
+        .office-info {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 80px 0;
+        }
+        
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .office-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 40px 30px;
+        }
+        
+        .office-card .icon {
+            font-size: 48px;
+            color: #22d3ee;
+            margin-bottom: 20px;
+        }
+        
+        .office-card h3 {
+            font-size: 24px;
+            color: #f8fafc;
+            margin-bottom: 15px;
+        }
+        
+        .office-card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid #334155;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-preferences {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .office-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <i class="fas fa-brain"></i>
+                Oregon Legal Mind.ai
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/demo">Demo</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            
+            <div class="contact-header">
+                <a href="tel:+15419149150" class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <span>Text Sean: 541-914-9150</span>
+                </a>
+                <a href="tel:LEGALBOT_NUMBER" class="contact-method">
+                    <i class="fas fa-robot"></i>
+                    <span>Call LegalBot: (Coming Soon)</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Oregon Legal Mind.ai</h1>
+            <p>Multiple ways to connect with our team and experience our revolutionary legal AI platform</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-options">
+                    <!-- LegalBot AI -->
+                    <div class="contact-option featured">
+                        <div class="icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>🤖 Call LegalBot AI</h3>
+                        <p><strong>Experience our legal AI firsthand!</strong> Call our AI voice assistant for instant legal AI consultation. Every conversation is a live product demonstration.</p>
+                        <p><strong>Available:</strong> 24/7<br>
+                        <strong>Response Time:</strong> Immediate<br>
+                        <strong>Best For:</strong> Quick questions, product demo, AI experience</p>
+                        <a href="tel:LEGALBOT_NUMBER" class="cta">
+                            <i class="fas fa-phone"></i>
+                            Call LegalBot (Coming Soon)
+                        </a>
+                    </div>
+                    
+                    <!-- Text Sean -->
+                    <div class="contact-option">
+                        <div class="icon">
+                            <i class="fas fa-sms"></i>
+                        </div>
+                        <h3>📱 Text Sean Directly</h3>
+                        <p>Direct line to founder Sean Keener for immediate personal assistance. Text "LEGAL AI" for instant information about our platform.</p>
+                        <p><strong>Available:</strong> 6 AM - 10 PM PST<br>
+                        <strong>Response Time:</strong> Under 2 hours<br>
+                        <strong>Best For:</strong> Enterprise inquiries, urgent questions, personal consultation</p>
+                        <a href="sms:+15419149150&body=LEGAL%20AI" class="cta">
+                            <i class="fas fa-comment"></i>
+                            Text: 541-914-9150
+                        </a>
+                    </div>
+                    
+                    <!-- Schedule Demo -->
+                    <div class="contact-option">
+                        <div class="icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <h3>📅 Schedule Demo Call</h3>
+                        <p>Book a personalized 30-minute demo tailored to your practice area and firm size. See our platform in action with real legal scenarios.</p>
+                        <p><strong>Available:</strong> Monday-Friday, 9 AM - 6 PM PST<br>
+                        <strong>Duration:</strong> 30 minutes<br>
+                        <strong>Best For:</strong> Detailed product walkthrough, team presentations</p>
+                        <a href="#demoForm" class="cta secondary">
+                            <i class="fas fa-video"></i>
+                            Request Demo
+                        </a>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="contact-option">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>📧 Email Support</h3>
+                        <p>Send detailed questions, technical inquiries, or partnership requests via email. Perfect for comprehensive information requests.</p>
+                        <p><strong>Available:</strong> 24/7<br>
+                        <strong>Response Time:</strong> Within 4 hours<br>
+                        <strong>Best For:</strong> Detailed inquiries, technical questions, partnerships</p>
+                        <a href="mailto:contact@oregonlegalmind.ai" class="cta secondary">
+                            <i class="fas fa-envelope"></i>
+                            contact@oregonlegalmind.ai
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form" id="demoForm">
+                    <h3>Request Information</h3>
+                    <p class="subtitle">Fill out this form and we'll get back to you within 2 hours</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lawFirm">Law Firm</label>
+                                <input type="text" id="lawFirm" name="lawFirm">
+                            </div>
+                            <div class="form-group">
+                                <label for="practiceArea">Practice Area</label>
+                                <select id="practiceArea" name="practiceArea">
+                                    <option value="">Select Practice Area</option>
+                                    <option value="Personal Injury">Personal Injury</option>
+                                    <option value="Corporate/Business">Corporate/Business</option>
+                                    <option value="Employment Law">Employment Law</option>
+                                    <option value="Family Law">Family Law</option>
+                                    <option value="Criminal Defense">Criminal Defense</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Intellectual Property">Intellectual Property</option>
+                                    <option value="Tax Law">Tax Law</option>
+                                    <option value="Immigration">Immigration</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="firmSize">Firm Size</label>
+                            <select id="firmSize" name="firmSize">
+                                <option value="">Select Firm Size</option>
+                                <option value="Solo">Solo Practitioner</option>
+                                <option value="2-10">Small Firm (2-10 attorneys)</option>
+                                <option value="11-50">Medium Firm (11-50 attorneys)</option>
+                                <option value="50+">Large Firm (50+ attorneys)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your legal AI needs, specific questions, or demo preferences..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Contact Method</label>
+                            <div class="contact-preferences">
+                                <label class="preference-option">
+                                    <input type="radio" name="contactPreference" value="Call LegalBot" checked>
+                                    <span>🤖 Call LegalBot AI</span>
+                                </label>
+                                <label class="preference-option">
+                                    <input type="radio" name="contactPreference" value="Text Sean">
+                                    <span>📱 Text Sean</span>
+                                </label>
+                                <label class="preference-option">
+                                    <input type="radio" name="contactPreference" value="Schedule Demo">
+                                    <span>📅 Schedule Demo</span>
+                                </label>
+                                <label class="preference-option">
+                                    <input type="radio" name="contactPreference" value="Email Info">
+                                    <span>📧 Email Info</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Info -->
+    <section class="office-info">
+        <div class="container">
+            <div class="office-grid">
+                <div class="office-card">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Oregon Headquarters</h3>
+                    <p>Based in White Salmon, Washington, serving legal professionals across Oregon and the Pacific Northwest with cutting-edge AI technology.</p>
+                </div>
+                
+                <div class="office-card">
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p><strong>Phone Support:</strong> Monday-Friday, 9 AM - 6 PM PST<br>
+                    <strong>LegalBot AI:</strong> Available 24/7<br>
+                    <strong>Emergency:</strong> Text Sean directly</p>
+                </div>
+                
+                <div class="office-card">
+                    <div class="icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy & Security</h3>
+                    <p>All communications are secured with enterprise-grade encryption. Attorney-client privilege protected with local deployment options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-brain"></i> Oregon Legal Mind.ai
+                </div>
+                <div class="footer-contacts">
+                    <a href="tel:+15419149150" class="footer-contact">
+                        <i class="fas fa-phone"></i>
+                        <span>Text Sean: 541-914-9150</span>
+                    </a>
+                    <a href="tel:LEGALBOT_NUMBER" class="footer-contact">
+                        <i class="fas fa-robot"></i>
+                        <span>Call LegalBot: (Coming Soon)</span>
+                    </a>
+                    <a href="mailto:contact@oregonlegalmind.ai" class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@oregonlegalmind.ai</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oregon Legal Mind.ai. All rights reserved. | Revolutionizing Legal Practice with AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                const response = await fetch('/api/leads/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    // Success
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    
+                    // Show success message
+                    alert('Thank you for contacting us! We\'ll get back to you within 2 hours. Check your email for confirmation.');
+                    
+                    // Reset form after delay
+                    setTimeout(() => {
+                        this.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = 'linear-gradient(135deg, #22d3ee 0%, #10b981 100%)';
+                    }, 3000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                // Error state
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error - Try Again';
+                submitBtn.style.background = '#ef4444';
+                
+                alert('There was an error sending your message. Please try again or call us directly.');
+                
+                // Reset button after delay
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = 'linear-gradient(135deg, #22d3ee 0%, #10b981 100%)';
+                }, 3000);
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
