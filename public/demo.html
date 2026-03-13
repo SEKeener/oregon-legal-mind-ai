@@ -704,10 +704,10 @@
                     </div>
                     
                     <div class="demo-actions">
-                        <button class="demo-btn" onclick="runDemo('personal-injury')">
+                        <button class="demo-btn" onclick="runDemo('personal-injury')" type="button">
                             <i class="fas fa-search"></i> Analyze Case
                         </button>
-                        <button class="demo-btn secondary" onclick="clearDemo('personal-injury')">
+                        <button class="demo-btn secondary" onclick="clearDemo('personal-injury')" type="button">
                             <i class="fas fa-refresh"></i> Clear
                         </button>
                     </div>
@@ -766,10 +766,10 @@
                     </div>
                     
                     <div class="demo-actions">
-                        <button class="demo-btn" onclick="runDemo('corporate')">
+                        <button class="demo-btn" onclick="runDemo('corporate')" type="button">
                             <i class="fas fa-file-contract"></i> Analyze Contract
                         </button>
-                        <button class="demo-btn secondary" onclick="clearDemo('corporate')">
+                        <button class="demo-btn secondary" onclick="clearDemo('corporate')" type="button">
                             <i class="fas fa-refresh"></i> Clear
                         </button>
                     </div>
@@ -829,10 +829,10 @@
                     </div>
                     
                     <div class="demo-actions">
-                        <button class="demo-btn" onclick="runDemo('family')">
+                        <button class="demo-btn" onclick="runDemo('family')" type="button">
                             <i class="fas fa-balance-scale"></i> Analyze Custody
                         </button>
-                        <button class="demo-btn secondary" onclick="clearDemo('family')">
+                        <button class="demo-btn secondary" onclick="clearDemo('family')" type="button">
                             <i class="fas fa-refresh"></i> Clear
                         </button>
                     </div>
@@ -893,10 +893,10 @@
                     </div>
                     
                     <div class="demo-actions">
-                        <button class="demo-btn" onclick="runDemo('criminal')">
+                        <button class="demo-btn" onclick="runDemo('criminal')" type="button">
                             <i class="fas fa-shield-alt"></i> Analyze Defense
                         </button>
-                        <button class="demo-btn secondary" onclick="clearDemo('criminal')">
+                        <button class="demo-btn secondary" onclick="clearDemo('criminal')" type="button">
                             <i class="fas fa-refresh"></i> Clear
                         </button>
                     </div>
@@ -963,10 +963,10 @@
                     </div>
                     
                     <div class="demo-actions">
-                        <button class="demo-btn" onclick="runDemo('real-estate')">
+                        <button class="demo-btn" onclick="runDemo('real-estate')" type="button">
                             <i class="fas fa-search-plus"></i> Analyze Title
                         </button>
-                        <button class="demo-btn secondary" onclick="clearDemo('real-estate')">
+                        <button class="demo-btn secondary" onclick="clearDemo('real-estate')" type="button">
                             <i class="fas fa-refresh"></i> Clear
                         </button>
                     </div>
@@ -1060,10 +1060,10 @@
             </div>
 
             <div class="demo-actions">
-                <button class="demo-btn" onclick="calculateROI()">
+                <button class="demo-btn" onclick="calculateROI()" type="button">
                     <i class="fas fa-calculator"></i> Calculate Savings
                 </button>
-                <button class="demo-btn secondary" onclick="resetROI()">
+                <button class="demo-btn secondary" onclick="resetROI()" type="button">
                     <i class="fas fa-refresh"></i> Reset
                 </button>
             </div>
@@ -1160,9 +1160,16 @@
 
         // Demo Functions
         async function runDemo(type) {
+            console.log('Running demo for type:', type);
             const resultsDiv = document.getElementById(`${type}-results`);
             const demoBtn = event.target;
             const originalText = demoBtn.innerHTML;
+            
+            if (!resultsDiv) {
+                console.error('Results div not found for type:', type);
+                alert('Demo configuration error. Please contact support.');
+                return;
+            }
             
             // Show loading state
             demoBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
@@ -1172,36 +1179,35 @@
             resultsDiv.classList.remove('show');
             
             try {
-                // Simulate API call delay
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Add small delay for UX
+                await new Promise(resolve => setTimeout(resolve, 1500));
                 
-                // Show results
+                // Show results (they're pre-built in HTML)
                 resultsDiv.classList.add('show');
                 
-                // Track demo usage
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'demo_run', {
-                        'demo_type': type,
-                        'timestamp': new Date().toISOString()
-                    });
-                }
+                // Scroll to results
+                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                // Send to backend for tracking
-                fetch('/api/demo/live-demo', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        scenario: type,
-                        query: document.getElementById(`${type.replace('-', '')}-scenario`).value || 'Demo scenario',
-                        timestamp: new Date().toISOString()
-                    })
-                }).catch(err => console.log('Demo tracking error:', err));
+                // Track demo usage
+                try {
+                    await fetch('/api/demo/live-demo', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            scenario: type,
+                            query: document.getElementById(`${type.replace('-', '')}-scenario`).value || 'Demo scenario',
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+                } catch (trackingError) {
+                    console.log('Demo tracking error:', trackingError);
+                }
                 
             } catch (error) {
                 console.error('Demo error:', error);
-                alert('Demo temporarily unavailable. Please try again or contact us directly.');
+                alert('Demo temporarily unavailable. Please contact us directly at contact@oregonlegalmind.ai');
             } finally {
                 // Reset button
                 demoBtn.innerHTML = originalText;
@@ -1210,11 +1216,21 @@
         }
 
         function clearDemo(type) {
+            console.log('Clearing demo for type:', type);
             const textarea = document.querySelector(`#${type} textarea`);
             const results = document.getElementById(`${type}-results`);
             
-            if (textarea) textarea.value = '';
-            results.classList.remove('show');
+            if (textarea) {
+                textarea.value = '';
+            } else {
+                console.log('Textarea not found for type:', type);
+            }
+            
+            if (results) {
+                results.classList.remove('show');
+            } else {
+                console.log('Results div not found for type:', type);
+            }
         }
 
         // ROI Calculator
