@@ -95,9 +95,9 @@ app.get('/contact', (req, res) => {
   res.sendFile('contact.html', { root: './public' });
 });
 
-// Demo page
+// Demo page removed - redirect to pricing
 app.get('/demo', (req, res) => {
-  res.sendFile('demo.html', { root: './public' });
+  res.redirect('/pricing');
 });
 
 // Health check endpoint
